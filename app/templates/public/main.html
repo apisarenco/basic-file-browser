@@ -1,0 +1,15 @@
+{% extends "public/_layout.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12">{{model.display_name}}</div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-10" id="file-area">
+    {% include 'public/partial/file_thumbs.html' %}
+  </div>
+</div>
+
+{% endblock %}

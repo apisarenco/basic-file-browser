@@ -1,0 +1,5 @@
+flask
+flask_wtf
+werkzeug
+#alembic>=0.8.10
+#sqlalchemy-utils>=0.32.1

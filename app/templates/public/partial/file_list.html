@@ -1,0 +1,19 @@
+{% if model.display_name != '/' %}
+<div>
+  {% if model.parent_path == '/' %}
+  <a href="{{url_for('dir')}}"></a>
+  {% endif %}
+  <a href="{{url_for('dir', path=model.parent_path[1:])}}">
+    <i class="fa fa-level-up"></i>
+    Go Up
+  </a>
+</div>
+{% endif %}
+{% for fsobj in model.contents %}
+<div>
+  <a href="{{url_for('dir', path=fsobj.full_path[1:])}}">
+    {% if fsobj.is_directory %}<i class="fa fa-folder"></i>{% endif %}
+    {{fsobj.display_name}}
+  </a>
+</div>
+{% endfor %}
